@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>my-vue-app</title>
+    </head>
+    <body>
+
+        <div id="watched-example">
+            <input v-model='question'/>
+            <div>{{answer}}</div>
+        </div>
+        <div id='conditions'>
+            <div v-if='contentVisible'>
+                Content is visible
+            </div>
+        </div>
+
+        <div id='filtered-array'>
+            <ul>
+                <li v-for='item in segments'>
+                    <segment-component
+                        v-bind:segment='item'
+                        v-bind:key='item.id'>
+                    </segment-component>
+                </li>
+            </ul>
+
+            <div>Straights:</div>
+            <ul>
+                <li v-for='item in straightSegments'>
+                    <segment-component
+                        v-bind:segment='item'
+                        v-bind:key='item.id'>
+                    </segment-component>
+                </li>
+            </ul>
+        </div>
+
+        <div id='checkboxes'>
+            <input type="checkbox" id='jack' value="Jack" v-model='checkedNames'>
+            <label for='jack'>Jack</label>
+            <input type="checkbox" id='john' value="John" v-model='checkedNames'>
+            <label for='jack'>Jack</label>
+            <br>
+            <span>Checked names: {{checkedNames}}</span>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+        <script src="/scripts/watched.js"></script>
+        <script src="/scripts/conditions.js"></script>
+        <script src="/scripts/segment-component.js"></script>
+        <script src="/scripts/filtered-array.js"></script>
+        <script src="/scripts/checkboxes.js"></script>
+    </body>
+</html>

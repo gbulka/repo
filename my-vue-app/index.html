@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>my-vue-app</title>
+  </head>
+  <body>
+    <!-- <div id="app"></div> -->
+    <!-- <script src="/dist/build.js"></script> -->
+    <div id='app-1'>
+      {{message}}
+    </div>
+    <div id="app-2">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds
+          to see my dynamically bound title!
+        </span>
+    </div>
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+    </div>
+    <div id="app-4">
+      <ul>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ul>
+    </div>
+    <div id='app-5'>
+      <span v-bind:title='message'>Message: {{message}}</span>
+      <button v-on:click='reverseMessage'>Reverse</button>
+    </div>
+    <div id='app-6'>
+      <p>{{message}}</p>
+      <input v-model='message'>
+    </div>
+    <div id='app-7'>
+      <ol>
+        <li v-for='item in itemList'>
+          <todo-item            
+            v-bind:todo='item'
+            v-bind:key='item.id' >
+          </todo-item>
+        </li>
+      </ol>
+    </div>
+    <div id='app-8'>
+      <input v-model='message' />
+      <div>{{invertedMessage}}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/scripts/app1.js"></script>
+    <script src='/scripts/app2.js'></script>
+    <script src='/scripts/app3.js'></script>
+    <script src='/scripts/app4.js'></script>
+    <script src='/scripts/app5.js'></script>
+    <script src='/scripts/app6.js'></script>
+    <script src='/scripts/app7.js'></script>
+    <script src='/scripts/app8.js'></script>
+  </body>
+</html>
